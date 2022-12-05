@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Car Master</title>
+{% endblock %}
+
+{% block body %}
+
+<input type="submit" name="submit_button" value="Type in Car Information">
+<input type="submit" name="submit_button" value="Do Something Else">
+<div id="type_info">
+    <a href="/typein">Type in Car Information</a>
+</div>
+
+<div id="load_csv">
+    <a href="/upload">Upload CSV</a>
+</div>
+
+<div id="view_table">
+    <a href="/table">View Cars in Table</a>
+</div>
+
+<div id="view_graph">
+<a href="/graph">View Cars in Graph</a>
+
+<div id="view_bar">
+<a href="/bar">View Cars in Bar</a>
+
+<div id="view_pie">
+    <a href="/pie">View Cars in Pie chart</a>
+</div>
+</div>
+<div class="content">
+    <h1 style="text-align: center">View Cars in Table</h1>
+    {% if cars|length < 1 %}
+    <h4 style="text-align: center">There are no cars. Create one below!</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Mileage</th>
+            <th>Condition</th>
+            <th>Year</th>
+            <th>Price</th>
+            <th>Dealer</th>
+            <th>Count of ratings</th>
+            <th>Reviews</th>
+            <th>Image</th>
+            <th>Date added</th>
+            <th>Uddate/Delete</th>
+            
+        </tr>
+        {% for car in cars %}
+        <tr>
+            <td>{{ car.content['Name'] }}</td>
+            <td>{{ car.content['Mileage'] }}</td>
+            <td>{{ car.content['Condition'] }}</td>
+            <td>{{ car.content['Year'] }}</td>
+            <td>{{ car.content['Price'] }}</td>
+            <td>{{ car.content['Dealer'] }}</td>
+            <td>{{ car.content['Count of ratings'] }}</td>
+            <td>{{ car.content['Reviews'] }}</td>
+            <td>
+                <img src="{{ car.content['Image']}}" alt="User Image">
+            </td>
+            </td>
+            <td>{{ car.date_created.date() }}</td>
+            
+            <td>
+                <a href="/delete/{{car.id}}">Delete</a>
+                <br>
+                <a href="/update/{{car.id}}">Update</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+{% endblock %}

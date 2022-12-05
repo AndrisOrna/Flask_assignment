@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Type in Car Information</title>
+{% endblock %}
+
+{% block body %}
+<div id="one_by_one" class="form">
+    <form action="/typein" method="POST"> <!-- Post means sending info to html-->
+        <label for="fname">Name:</label><br>
+        <input type="text" name="Name" id="val_price"><br><br>
+
+        <label for="fname">Mileage:</label><br>
+        <input type="text" name="Mileage" id="val_mileage"><br><br>
+
+        <label for="fname">Condition:</label><br>
+        <input type="text" name="Condition" id="val_year"><br><br>
+
+        <label for="fname">Year:</label><br>
+        <input type="text" name="Year" id="val_make"><br><br>
+
+        <label for="fname">Price:</label><br>
+        <input type="text" name="Price" id="val_model"><br><br>
+
+        <label for="fname">Dealer:</label><br>
+        <input type="text" name="Dealer" id="val_model"><br><br>
+
+        <label for="fname">Count of ratings:</label><br>
+        <input type="text" name="Count of ratings" id="val_fuel_type"><br><br>
+        
+        <label for="fname">Reviews:</label><br>
+        <input type="text" name="Reviews" id="val_price"><br><br>
+        
+        <label for="fname">Image URL:</label><br>
+        <input type="text" name="ImageURL" id="url_img"><br><br>`
+        <!--This is a button -->
+        <input type="submit" value="Add Car to table"> 
+    </form>
+</div>
+{% endblock %}

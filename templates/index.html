@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<h1>Car Master</h1>
+{% endblock %}
+
+{% block body %}
+
+<div id="type_info">
+    <a href="/typein">Type in Car Information</a>
+</div>
+
+<div id="load_csv">
+    <a href="/upload">Upload CSV</a>
+</div>
+
+<div id="view_table">
+    <a href="/table">View Cars in Table</a>
+</div>
+
+<div id="view_graph">
+<a href="/graph">View Cars in Graph</a>
+
+<div id="view_bar">
+<a href="/bar">View Cars in Bar</a>
+
+<div id="view_pie">
+    <a href="/pie">View Cars in Pie chart</a>
+</div>
+</div>
+{% endblock %}

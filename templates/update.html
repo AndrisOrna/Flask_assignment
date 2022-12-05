@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Car Master</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Update Car</h1>
+
+    <div class="form">
+        <form action="/update/{{car.id}}" method="POST">
+            <input type="text" name="content" id="content" value="{{car.content}}">
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</div>
+{% endblock %}
