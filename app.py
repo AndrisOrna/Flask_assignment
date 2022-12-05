@@ -89,8 +89,8 @@ def upload():
         df = pd.read_csv(f)
         for index, row in df.iterrows():
 
-            form = {k: row[k] for k in ["Name", "Mileage", "Condition", "Price", "Dealer", "Count of ratings", "Reviews"]}
-            # form = {k: row[k] for k in ["Name", "Mileage", "Condition", "Year", "Price", "Dealer","Count of ratings", "Reviews"]}
+            # form = {k: row[k] for k in ["Name", "Mileage", "Condition", "Price", "Dealer", "Count of ratings", "Reviews"]}
+            form = {k: row[k] for k in ["Name", "Mileage", "Condition", "Year", "Price", "Dealer","Count of ratings", "Reviews"]}
 
             
             item_json = json.dumps(form)
